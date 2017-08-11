@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://cchcl.top/2017/08/11/mwrace/</loc>
+    <loc>http://cchcl.top/2017/08/09/index/</loc>
     
-    <lastmod>2017-08-11T10:18:03.097Z</lastmod>
+    <lastmod>2017-08-11T10:58:26.435Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cchcl.top/2017/08/11/mwrace_final/</loc>
+    
+    <lastmod>2017-08-11T10:56:47.556Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://cchcl.top/2017/08/10/mwrace/</loc>
+    
+    <lastmod>2017-08-11T10:56:04.638Z</lastmod>
     
   </url>
   
@@ -26,27 +40,6 @@
     <loc>http://cchcl.top/tags/index.html</loc>
     
     <lastmod>2017-08-11T05:53:21.858Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cchcl.top/2017/08/11/hcl/</loc>
-    
-    <lastmod>2017-08-11T05:40:42.659Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cchcl.top/2017/08/11/xyx/</loc>
-    
-    <lastmod>2017-08-11T05:24:50.170Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://cchcl.top/2017/08/10/hello-world/</loc>
-    
-    <lastmod>2017-08-11T03:05:02.140Z</lastmod>
     
   </url>
   
