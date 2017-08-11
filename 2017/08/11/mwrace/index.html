@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="-Java开发 -性能优化," />
 
 
 
@@ -94,17 +94,23 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="1 初赛初赛题目：《基于Open-Messaging实现进程内消息引擎》 1.1 赛题背景分析及理解赛题描述：支撑阿里双十一的万亿级消息中间件RocketMQ在2016年10月正式进入Apache基金会进行孵化。异步解耦，削峰填谷，让消息中间件在现代软件架构中拥有着举足轻重的地位。天下大势，分久必合，合久必分，软件领域也是如此。市场上消息中间件种类繁多，阿里消息团队在此当口，推出厂商无关的Open">
+<meta name="keywords" content="-Java开发 -性能优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://cchcl.top/2017/08/10/hello-world/index.html">
+<meta property="og:title" content="第三届阿里中间件性能挑战赛比赛攻略">
+<meta property="og:url" content="http://cchcl.top/2017/08/11/mwrace/index.html">
 <meta property="og:site_name" content="cchcl">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1 初赛初赛题目：《基于Open-Messaging实现进程内消息引擎》 1.1 赛题背景分析及理解赛题描述：支撑阿里双十一的万亿级消息中间件RocketMQ在2016年10月正式进入Apache基金会进行孵化。异步解耦，削峰填谷，让消息中间件在现代软件架构中拥有着举足轻重的地位。天下大势，分久必合，合久必分，软件领域也是如此。市场上消息中间件种类繁多，阿里消息团队在此当口，推出厂商无关的Open">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T03:05:02.140Z">
+<meta property="og:image" content="http://cchcl.top/images/17_8_11_1.jpg">
+<meta property="og:image" content="http://cchcl.top/images/17_8_11_2.jpg">
+<meta property="og:image" content="http://cchcl.top/images/17_8_11_3.jpg">
+<meta property="og:image" content="http://cchcl.top/images/17_8_11_4.jpg">
+<meta property="og:updated_time" content="2017-08-11T09:13:30.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="第三届阿里中间件性能挑战赛比赛攻略">
+<meta name="twitter:description" content="1 初赛初赛题目：《基于Open-Messaging实现进程内消息引擎》 1.1 赛题背景分析及理解赛题描述：支撑阿里双十一的万亿级消息中间件RocketMQ在2016年10月正式进入Apache基金会进行孵化。异步解耦，削峰填谷，让消息中间件在现代软件架构中拥有着举足轻重的地位。天下大势，分久必合，合久必分，软件领域也是如此。市场上消息中间件种类繁多，阿里消息团队在此当口，推出厂商无关的Open">
+<meta name="twitter:image" content="http://cchcl.top/images/17_8_11_1.jpg">
 
 
 
@@ -133,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://cchcl.top/2017/08/10/hello-world/"/>
+  <link rel="canonical" href="http://cchcl.top/2017/08/11/mwrace/"/>
 
 
 
 
 
-  <title>Hello World | cchcl</title>
+  <title>第三届阿里中间件性能挑战赛比赛攻略 | cchcl</title>
   
 
 
@@ -310,7 +316,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cchcl.top/2017/08/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://cchcl.top/2017/08/11/mwrace/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hcl">
@@ -327,7 +333,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Hello World</h2>
+          <h2 class="post-title" itemprop="name headline">第三届阿里中间件性能挑战赛比赛攻略</h2>
         
 
         <div class="post-meta">
@@ -339,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T10:03:14+08:00">
-                2017-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T13:22:46+08:00">
+                2017-08-11
               </time>
             
 
@@ -350,6 +356,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/天池比赛/" itemprop="url" rel="index">
+                    <span itemprop="name">天池比赛</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -357,7 +385,7 @@
 
           
           
-             <span id="/2017/08/10/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/08/11/mwrace/" class="leancloud_visitors" data-flag-title="第三届阿里中间件性能挑战赛比赛攻略">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,15 +416,226 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h1 id="1-初赛"><a href="#1-初赛" class="headerlink" title="1 初赛"></a>1 初赛</h1><p>初赛题目：《基于Open-Messaging实现进程内消息引擎》</p>
+<h2 id="1-1-赛题背景分析及理解"><a href="#1-1-赛题背景分析及理解" class="headerlink" title="1.1 赛题背景分析及理解"></a>1.1 赛题背景分析及理解</h2><p>赛题描述：支撑阿里双十一的万亿级消息中间件RocketMQ在2016年10月正式进入Apache基金会进行孵化。异步解耦，削峰填谷，让消息中间件在现代软件架构中拥有着举足轻重的地位。天下大势，分久必合，合久必分，软件领域也是如此。市场上消息中间件种类繁多，阿里消息团队在此当口，推出厂商无关的Open-Messaging规范，促进消息领域的进一步发展。本赛题要求参赛选手阅读Open-Messaging规范，了解Message，Topic，Queue，Producer，Consumer等概念，并基于相关语言的接口实现进程内消息引擎。<br>分析与理解：消息中间件分布式系统的消息传递和通信中具有举足轻重的作用，消息中间件的性能在一定程度上决定了整个系统的性能。消息中间件对于生产者而言，写入消息要快，且消息写入后不能丢失；对于消费者而言，消费顺序不能乱，消息到的消息要准确及时。一般而言，要做到高性能的分布式消息中间件，在架构上和实现上都要高屋建瓴，推出通用的规范和概念，便于沟通和交流，以及软件的发展和升级。目前，阿里具有很大的平台，拥有别人没有的数据和技术优势，但是也面临着别人没有的挑战，比如双十一亿万级消息挑战等。通过这次比赛，我们可以更进一步感受和了解阿里的技术以及面临的挑战，通过拓宽自己的眼界，提升自己的技术水平。</p>
+<h2 id="1-2-核心思路"><a href="#1-2-核心思路" class="headerlink" title="1.2 核心思路"></a>1.2 核心思路</h2><p>根据题目要求，我们需要实现指定接口，完成消息的生产、存储、消费等功能。其中消息的存储是关键，需要保证消息的正确性和顺序一致性，同时需要持久化到磁盘上，消息持久化的方式和性能影响着生产消息和消费消息的速度。下面是我们的核心思路的具体说明。</p>
+<h3 id="1-2-1-整体处理流程"><a href="#1-2-1-整体处理流程" class="headerlink" title="1.2.1 整体处理流程"></a>1.2.1 整体处理流程</h3><p>整体处理流程如图1所示，首先启动生产进程生产消息，并进行消息存储，由于消息生产和消息消费是不同进程，需要进行消息持久化，保存到磁盘上，待消息生产结束后，结束生产进程，启动消费进程进行消息消费，消费过程需要保证消费到的消息次序和生产时次序一致，且消息正确。</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="/images/17_8_11_1.jpg" alt="图1 整体流程图"></h3><h3 id="1-2-2-消息存储方案"><a href="#1-2-2-消息存储方案" class="headerlink" title="1.2.2 消息存储方案"></a>1.2.2 消息存储方案</h3><p>在比赛中，我们实现了多种消息存储方案，分别如下：<br>方案1：这个消息存储方案为一个Topic或者Queue对应一个文件。每个生产者在写入消息到Topic或者Queue时，先获取Topic或者Queue的互斥锁，获取到锁后，然后再写入消息。每个消费者消费时可以同时打开同一个文件进行消费，互不干扰。<br>优点：管理简单<br>缺点：需要加锁以保证消息的正确写入，效率不高；<br>方案2：这个消息存储方案为一个Topic或者Queue对应多个文件。对于一个Topic或者Queue我们以Topic或Queue的名称建立一个目录，每个线程如果要将消息写入到该Topic或者Queue中，则在目录下创建一个独立文件，该线程的要写入该Topic或者Queue的后续消息都将写入到该文件中。当需要消费一个Topic或者Queue中的消息时，消费者只需依次消费该Toipc或者Queue下对应的目录下的所有文件的消息即可。<br>优点：无需加锁，写入效率较高。<br>缺点：消息存储时文件数跟线程相关，耦合度相对较高。</p>
+<p>对比方案1和方案2，我们最后采用方案2实现消息存储，线上测试时效率也比方案1要高。</p>
+<h3 id="1-2-3-消息持久化"><a href="#1-2-3-消息持久化" class="headerlink" title="1.2.3 消息持久化"></a>1.2.3 消息持久化</h3><p>消息由头部（headers)、属性（properties)、主体（body)三个部分组成，其中头部和属性为KeyValue结构，消息主体为byte[]数组。</p>
+<p>消息存储需要序列化，消息是一个对象，对象的序列化方案主要有JDK的Serializable ，将对象转换为JSON或者XML格式的字符串，自定义存储格式等。其中JDK的Serializable 在序列化时，需要额外写入对象的Class信息，效率不高，且浪费空间。JSON或者XML则需要将对象转换为字符串，多了一个转换过程，增加了CPU开销。我们根据实际情况，采用自定义存储格式进行消息序列化，具体如下：<br>1.对于KeyValue结构的Headers或Properties，我们先写入KeyValue总数，然后对于每个KeyValue，先写入Key的字节数组长度，然后写入key的字节数组，再写入Value的字节数组长度，最后写入Value的字节数组。<br>2.对于消息主体的byte[]，我们先写入byte[]的长度，然后写入byte[]。</p>
+<p>其中，一条消息序列化后的结构为：Header  + Properties +  body，示意图如图2所示：</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/images/17_8_11_2.jpg" alt="图2 消息序列化结构图"></h3><h3 id="1-2-4-数据压缩方案"><a href="#1-2-4-数据压缩方案" class="headerlink" title="1.2.4.数据压缩方案"></a>1.2.4.数据压缩方案</h3><p>由于消息数据量大，而IO速度比较慢，因此我们将数据进行压缩后再进行IO操作，这样做可以减少IO的数据量而提高写入效率。当然这种方案是用CPU开销换IO开销的方案。<br>对于数据压缩，无损压缩算法主要有Deflater，Snappy，LZ4，QuickLZ等。其中Deflater压缩速度比较慢。在线上测试时，我们使用了Deflater，Snappy，QucikLZ等3个压缩算法，压缩性能依次为：<br>Snappy &gt; QiuckLZ &gt; Deflater<br>在数据压缩时，如果每次只压缩一条消息，无疑效率是低下的，因此我们设置消息序列化缓存区，缓存区大小为32KB + 256B，每当缓存区满了，则调用压缩算法将缓存区数据压缩并写入文件。</p>
+<h2 id="1-3-关键代码"><a href="#1-3-关键代码" class="headerlink" title="1.3.关键代码"></a>1.3.关键代码</h2><p>消息写入关键代码：</p>
+<pre><code>public class SnappyWriter implements IWriter {
+private RandomAccessFile file;
+public static final int DEFAULT_SIZE = IConstants.CMP_MS;
+private byte[] bytes = new byte[DEFAULT_SIZE + IConstants.MSG_ML];
+private int p;
+private byte[] cmp = new byte[DEFAULT_SIZE + IConstants.MSG_ML];
+
+public SnappyWriter(String dir) throws IOException {
+    file = new RandomAccessFile(dir, &quot;rw&quot;);
+}
+private void put(byte a) {
+    bytes[p++] = (byte) (a &amp; 0xff);
+}
+private void put(byte[] bs) {
+    int a = bs.length;
+    if(a &lt; Byte.MAX_VALUE){
+        bytes[p++] = (byte) (a &amp; 0xff);
+    } else {
+        bytes[p++] = (byte) ((a &gt;&gt; 8 &amp; 0xff) | 0x80);
+        bytes[p++] = (byte) (a &amp; 0xff);
+    }
+    System.arraycopy(bs, 0, bytes, p, bs.length);
+    p += bs.length;
+}
+public void write(DefaultBytesMessage message) throws IOException {
+    DefaultKeyValue h = (DefaultKeyValue)message.headers();
+    DefaultKeyValue pro = (DefaultKeyValue)message.properties();
+    // 减少一个字节存储头部和属性的长度
+    byte tsize = (byte) ((((byte)h.num) &lt;&lt; 4 &amp; 0xf0) | (pro.num &amp; 0x0f));
+    put(tsize);
+    for (int i = 0; i &lt; h.num; i++) {
+        put(h.keys[i].getBytes());
+        put(h.values[i]);
+    }
+    for (int i = 0; i &lt; pro.num; i++) {
+        put(pro.keys[i].getBytes());
+        put(pro.values[i]);
+    }
+    byte[] body = ((DefaultBytesMessage) message).getBody();
+    put(body);
+
+    if (p &gt;= DEFAULT_SIZE) {
+        int clen = Snappy.compress(bytes, 0,p, cmp, 0);
+        file.writeShort(clen);
+        file.write(cmp, 0, clen);
+        this.p = 0;
+    }
+}
+public void close() throws IOException {
+    if (this.p &gt; 0) {
+        int clen = Snappy.compress(bytes, 0,p, cmp, 0);
+        file.writeShort(clen);
+        file.write(cmp, 0, clen);
+    }
+    file.writeShort(0);
+    file.close();
+}
+}
+</code></pre><p>消息读取关键代码：</p>
+<pre><code>public class SnappyReader implements IReader {
+private int cnt = 0;
+private MappedByteBuffer[] mBuffers;
+
+public SnappyReader(String dir) throws IOException {
+    File dirFile = new File(dir);
+    if (!dirFile.exists()) {
+        this.complete = true;
+        return;
+    }
+    File[] files = dirFile.listFiles();
+    if (files.length &lt;= 0) {
+        this.complete = true;
+        return;
+    }
+    mBuffers = new MappedByteBuffer[files.length];
+    for (int i = 0; i &lt; files.length; i++) {
+        @SuppressWarnings(&quot;resource&quot;)
+        FileChannel channel = new FileInputStream(files[i])
+                .getChannel();
+        mBuffers[i] = channel.map(MapMode.READ_ONLY, 0, channel.size());
+    }
+    mBuffer = mBuffers[cnt++];
+}
+
+public BytesMessage read() throws Exception {
+    if (complete) {
+        return null;
+    }
+    if(p &lt; limit){
+        return fromBuffer();
+    }
+    int len = 0;
+    while ((len = getLen()) == 0) {
+        if (cnt == mBuffers.length) {
+            this.complete = true;
+            return null;
+        }
+        mBuffer = mBuffers[cnt++];
+    }
+    mBuffer.get(cmp, 0, len);
+    limit = Snappy.uncompress(cmp, 0, len, bytes, 0);
+    p = 0;
+    return fromBuffer();
+}
+private int getLen(){
+    byte b1 = mBuffer.get();
+    byte b2 = mBuffer.get();
+    return ((((b1 &amp; 0xff) &lt;&lt; 8) | (b2 &amp; 0xff))) &amp; 0x7fffffff;
+}
+
+private byte[] cmp = new byte[IConstants.CMP_MS + IConstants.MSG_ML];
+private byte[] bytes = new byte[IConstants.CMP_MS + IConstants.MSG_ML];
+private int p;
+private int limit;
+
+private ByteBuffer mBuffer;
+private boolean complete = false;
+
+private QingBytesMessage msg = new QingBytesMessage();
+private QingKeyValue hds = new QingKeyValue(2);
+private QingKeyValue pros = new QingKeyValue(4);
+
+private static final String TOPIC = MessageHeader.TOPIC;
+private static final String QUEUE = MessageHeader.QUEUE;
+
+private BytesMessage fromBuffer() {
+    byte tsize = getByte();
+    int keySize = (tsize &gt;&gt; 4 &amp; 0x0f);
+    int pSize = (tsize &amp; 0x0f);
+    hds.clear();
+    for (int i = 0; i &lt; keySize; i++) {
+        String key = getString();
+        switch (key) {
+        case &quot;T&quot;:
+            hds.put(TOPIC, getBytes());
+            break;
+        case &quot;Q&quot;:
+            hds.put(QUEUE, getBytes());
+            break;
+        default:
+            hds.put(key, getBytes());
+            break;
+        }
+    }
+    msg.setHeaders(hds);
+    if(pSize &gt; 0){
+        pros.clear();
+        for (int i = 0; i &lt; pSize; i++) {
+            pros.put(getString(), getBytes());
+        }
+        msg.setProperties(pros);
+    } else {
+        msg.setProperties(null);
+    }
+    msg.setBody(getBytes());
+    return msg;
+}
+public int getShort() {
+    return (((bytes[p++] &amp; 0xff) &lt;&lt; 8) | ((bytes[p++] &amp; 0xff)));
+}
+
+public byte getByte() {
+    return (byte) (bytes[p++] &amp; 0xff);
+}
+public String getString() {
+    int a = (bytes[p++] &amp; 0xff);
+    String s = new String(bytes, p, a);
+    p += a;
+    return s;
+}
+public byte[] getBytes() {
+    int a = (((bytes[p++] &amp; 0xff) &lt;&lt; 8) | ((bytes[p++] &amp; 0xff)));
+    byte[] b = new byte[a];
+    System.arraycopy(bytes, p, b, 0, a);
+    p += a;
+    return b;
+}
+}
+</code></pre><h2 id="1-4-总结"><a href="#1-4-总结" class="headerlink" title="1.4 总结"></a>1.4 总结</h2><ul>
+<li>尽量实现对象复用，避免频繁创建对象，避免频繁GC。</li>
+<li>能够避免加锁就避免，如果无法避免，则将加锁范围控制在最小范围内。</li>
+<li>减少中间数据拷贝过程，尽量直接将数据拷贝志最终目标处，能极大的提高效率。</li>
+<li>代码越优化越简单，往往简单的代码比复杂的代码可读性高，性能也相对来说比较高。</li>
+</ul>
+<h1 id="2-复赛"><a href="#2-复赛" class="headerlink" title="2 复赛"></a>2 复赛</h1><p>复赛的题目：《模拟阿里双十一分布式数据同步》</p>
+<h2 id="2-1-赛题背景分析及理解"><a href="#2-1-赛题背景分析及理解" class="headerlink" title="2.1.赛题背景分析及理解"></a>2.1.赛题背景分析及理解</h2><p>赛题描述：题目主要解决的是数据同步领域范畴：实时增量同步，主要的技术挑战为模拟数据库的主备复制，提供”高效”的实时同步能力。即给定一批固定的增量数据变更信息，程序需要收集增量变更信息，并进行一定的数据重放计算，然后将最终结果输出到给定的目标文件中。增量数据的变更信息为了简化处理，会给出明文的数据，主要包含数据库的insert/update/delete三种类型的数据。<br>分析与理解：实时增量同步中的“实时”就要求数据延迟不能很长，从而要求数据传输以及数据处理过程的效率都要高。</p>
+<h2 id="2-2-核心思路"><a href="#2-2-核心思路" class="headerlink" title="2.2 核心思路"></a>2.2 核心思路</h2><p>该赛题需要对原始数据进行解析，然后进行数据处理，最后输出最终要查询的结果，因此我们的核心思路围绕这三个部分展开，下面是我们的核心思路的具体说明。</p>
+<h3 id="2-2-1-整体处理流程"><a href="#2-2-1-整体处理流程" class="headerlink" title="2.2.1 整体处理流程"></a>2.2.1 整体处理流程</h3><p>服务器端和客户端的整体处理流程图如图3所示。为了加快数据解析和数据处理速度，提高资源利用率，我们在服务器端和客户端都采用了并行化设计。因为数据之间的存在一定相关性（操作依赖于前面的操作、操作与前面的冲突），所以要进行并行化设计是一个比较麻烦的事情，但考虑到这个并行化设计和指令执行的优化非常相似（指令之间存在相关性），所以我们参考了指令集的流水化设计，如图4所示。我们服务器端和客户端都采用了<strong>三段式流水化设计</strong>：服务器端中从文件读取数据，按行进行解析，然后将结果存入map中；客户端中从socket中读取数据，翻译成目标数据（传输过程中传的是处理过的数据，为了节省传输消耗），然后将结果写入目标文件。<strong>为什么不再细化流水线？</strong>实际测试中，当继续细化下去的时候，数据转移的开销已经大于本线程处理的收益了，所以最后采用了三段式。</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="/images/17_8_11_3.jpg" alt="图3 整体流程图"></h3><p>在服务器端，多个线程间要使用线程安全的队列交换数据，为了减少内存开销，我们使用数组和信号量实现了一个基于数组的线程安全的循环队列缓冲区，具体如下：</p>
+<ul>
+<li>FULL信号量表示数组有多少数据，初始为0；</li>
+<li>EMPTY信号量表示数组有多少空位置，初始为数组的大小；</li>
+<li>存入数据时，进行EMPTY.acquire()，存入后进行FULL.release()；</li>
+<li>使用数据时候，进行FULL.acquire()，使用完后进行EMPTY.release()；</li>
+</ul>
+<p>其中，图3中蓝色部分是服务端处理的流程图，服务端启动后会开启3个线程进行数据处理，三个线程的作用和处理过程如下所示：</p>
+<ol>
+<li><strong>读线程：</strong>该线程通过RandomAccessFile对象从数据源读取数据，然后进行检查是否为完整一行，没有则继续读入补全行，之后提交到DATA数据缓存区。</li>
+<li><strong> 解析线程：</strong>该线程从DATA数据缓存区拉取数据，然后按行解析数据，并将处理好的数据提交到ITEM缓存区。</li>
+<li><strong>Map维护线程：</strong>该线程从ITEM缓存区拉取数据，进行插入、删除、更新等操作。</li>
+</ol>
+<p>其中，图3中红色部分是客户端处理的流程图，客户端启动后也会开启3个线程进行数据处理，三个线程的作用和处理过程如下所示：</p>
+<ol>
+<li><strong>接收线程：</strong>该线程从Socket输入流中获取数据（存在与下一个线程共享的数组中），并更新接收到的数据数量。</li>
+<li><strong>解析线程：</strong>该线程轮询收到的数据数量，如果可以读取新的一行记录（12字节，int + long），则进行解析，并更新已解析完的数量。</li>
+<li><strong>写文件线程：</strong>该线程轮询已经解析完的数据数量，如果有新解析完的数据，则将新数据写入到文件中。</li>
+</ol>
+<h3 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="/images/17_8_11_4.jpg" alt="图4 流水化设计图"></h3><h3 id="2-2-2-数据处理"><a href="#2-2-2-数据处理" class="headerlink" title="2.2.2 数据处理"></a>2.2.2 数据处理</h3><p>数据重放操作需要对原始记录信息进行解析处理，而原始数据的文件每行的处理格式如表1所示。</p>
+<p>||dog || bird || cat||<br>||—-||——||—-||<br>||foo || foo  || foo||<br>||bar || bar  || bar||<br>||baz || baz  || baz||</p>
 
       
     </div>
@@ -450,6 +689,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Java开发-性能优化/" rel="tag"> <i class="fa fa-tag"></i> -Java开发 -性能优化</a>
+          
+        </div>
+      
 
       
       
@@ -459,14 +704,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/10/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/11/mwrace/" rel="prev" title="第三届阿里中间件性能挑战赛比赛攻略">
-                第三届阿里中间件性能挑战赛比赛攻略 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/11/xyx/" rel="prev" title="xyx">
+                xyx <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -627,7 +876,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-初赛"><span class="nav-number">1.</span> <span class="nav-text">1 初赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-赛题背景分析及理解"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 赛题背景分析及理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-核心思路"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 核心思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-整体处理流程"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 整体处理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.2.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-消息存储方案"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.2 消息存储方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-消息持久化"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.3 消息持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.2.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-数据压缩方案"><span class="nav-number">1.2.6.</span> <span class="nav-text">1.2.4.数据压缩方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-关键代码"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.关键代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-总结"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-复赛"><span class="nav-number">2.</span> <span class="nav-text">2 复赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-赛题背景分析及理解"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.赛题背景分析及理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-核心思路"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 核心思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-整体处理流程"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 整体处理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-2"><span class="nav-number">2.2.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-3"><span class="nav-number">2.2.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-数据处理"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.2.2 数据处理</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
