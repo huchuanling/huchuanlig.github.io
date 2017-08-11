@@ -104,9 +104,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://cchcl.top/images/17_8_11_1.jpg">
 <meta property="og:image" content="http://cchcl.top/images/17_8_11_2.jpg">
-<meta property="og:image" content="http://cchcl.top/images/17_8_11_3.jpg">
-<meta property="og:image" content="http://cchcl.top/images/17_8_11_4.jpg">
-<meta property="og:updated_time" content="2017-08-11T09:13:30.495Z">
+<meta property="og:updated_time" content="2017-08-11T10:18:03.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第三届阿里中间件性能挑战赛比赛攻略">
 <meta name="twitter:description" content="1 初赛初赛题目：《基于Open-Messaging实现进程内消息引擎》 1.1 赛题背景分析及理解赛题描述：支撑阿里双十一的万亿级消息中间件RocketMQ在2016年10月正式进入Apache基金会进行孵化。异步解耦，削峰填谷，让消息中间件在现代软件架构中拥有着举足轻重的地位。天下大势，分久必合，合久必分，软件领域也是如此。市场上消息中间件种类繁多，阿里消息团队在此当口，推出厂商无关的Open">
@@ -611,31 +609,6 @@ public byte[] getBytes() {
 <li>减少中间数据拷贝过程，尽量直接将数据拷贝志最终目标处，能极大的提高效率。</li>
 <li>代码越优化越简单，往往简单的代码比复杂的代码可读性高，性能也相对来说比较高。</li>
 </ul>
-<h1 id="2-复赛"><a href="#2-复赛" class="headerlink" title="2 复赛"></a>2 复赛</h1><p>复赛的题目：《模拟阿里双十一分布式数据同步》</p>
-<h2 id="2-1-赛题背景分析及理解"><a href="#2-1-赛题背景分析及理解" class="headerlink" title="2.1.赛题背景分析及理解"></a>2.1.赛题背景分析及理解</h2><p>赛题描述：题目主要解决的是数据同步领域范畴：实时增量同步，主要的技术挑战为模拟数据库的主备复制，提供”高效”的实时同步能力。即给定一批固定的增量数据变更信息，程序需要收集增量变更信息，并进行一定的数据重放计算，然后将最终结果输出到给定的目标文件中。增量数据的变更信息为了简化处理，会给出明文的数据，主要包含数据库的insert/update/delete三种类型的数据。<br>分析与理解：实时增量同步中的“实时”就要求数据延迟不能很长，从而要求数据传输以及数据处理过程的效率都要高。</p>
-<h2 id="2-2-核心思路"><a href="#2-2-核心思路" class="headerlink" title="2.2 核心思路"></a>2.2 核心思路</h2><p>该赛题需要对原始数据进行解析，然后进行数据处理，最后输出最终要查询的结果，因此我们的核心思路围绕这三个部分展开，下面是我们的核心思路的具体说明。</p>
-<h3 id="2-2-1-整体处理流程"><a href="#2-2-1-整体处理流程" class="headerlink" title="2.2.1 整体处理流程"></a>2.2.1 整体处理流程</h3><p>服务器端和客户端的整体处理流程图如图3所示。为了加快数据解析和数据处理速度，提高资源利用率，我们在服务器端和客户端都采用了并行化设计。因为数据之间的存在一定相关性（操作依赖于前面的操作、操作与前面的冲突），所以要进行并行化设计是一个比较麻烦的事情，但考虑到这个并行化设计和指令执行的优化非常相似（指令之间存在相关性），所以我们参考了指令集的流水化设计，如图4所示。我们服务器端和客户端都采用了<strong>三段式流水化设计</strong>：服务器端中从文件读取数据，按行进行解析，然后将结果存入map中；客户端中从socket中读取数据，翻译成目标数据（传输过程中传的是处理过的数据，为了节省传输消耗），然后将结果写入目标文件。<strong>为什么不再细化流水线？</strong>实际测试中，当继续细化下去的时候，数据转移的开销已经大于本线程处理的收益了，所以最后采用了三段式。</p>
-<h3 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="/images/17_8_11_3.jpg" alt="图3 整体流程图"></h3><p>在服务器端，多个线程间要使用线程安全的队列交换数据，为了减少内存开销，我们使用数组和信号量实现了一个基于数组的线程安全的循环队列缓冲区，具体如下：</p>
-<ul>
-<li>FULL信号量表示数组有多少数据，初始为0；</li>
-<li>EMPTY信号量表示数组有多少空位置，初始为数组的大小；</li>
-<li>存入数据时，进行EMPTY.acquire()，存入后进行FULL.release()；</li>
-<li>使用数据时候，进行FULL.acquire()，使用完后进行EMPTY.release()；</li>
-</ul>
-<p>其中，图3中蓝色部分是服务端处理的流程图，服务端启动后会开启3个线程进行数据处理，三个线程的作用和处理过程如下所示：</p>
-<ol>
-<li><strong>读线程：</strong>该线程通过RandomAccessFile对象从数据源读取数据，然后进行检查是否为完整一行，没有则继续读入补全行，之后提交到DATA数据缓存区。</li>
-<li><strong> 解析线程：</strong>该线程从DATA数据缓存区拉取数据，然后按行解析数据，并将处理好的数据提交到ITEM缓存区。</li>
-<li><strong>Map维护线程：</strong>该线程从ITEM缓存区拉取数据，进行插入、删除、更新等操作。</li>
-</ol>
-<p>其中，图3中红色部分是客户端处理的流程图，客户端启动后也会开启3个线程进行数据处理，三个线程的作用和处理过程如下所示：</p>
-<ol>
-<li><strong>接收线程：</strong>该线程从Socket输入流中获取数据（存在与下一个线程共享的数组中），并更新接收到的数据数量。</li>
-<li><strong>解析线程：</strong>该线程轮询收到的数据数量，如果可以读取新的一行记录（12字节，int + long），则进行解析，并更新已解析完的数量。</li>
-<li><strong>写文件线程：</strong>该线程轮询已经解析完的数据数量，如果有新解析完的数据，则将新数据写入到文件中。</li>
-</ol>
-<h3 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="/images/17_8_11_4.jpg" alt="图4 流水化设计图"></h3><h3 id="2-2-2-数据处理"><a href="#2-2-2-数据处理" class="headerlink" title="2.2.2 数据处理"></a>2.2.2 数据处理</h3><p>数据重放操作需要对原始记录信息进行解析处理，而原始数据的文件每行的处理格式如表1所示。</p>
-<p>||dog || bird || cat||<br>||—-||——||—-||<br>||foo || foo  || foo||<br>||bar || bar  || bar||<br>||baz || baz  || baz||</p>
 
       
     </div>
@@ -704,8 +677,8 @@ public byte[] getBytes() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/08/11/xyx/" rel="next" title="xyx">
+                <i class="fa fa-chevron-left"></i> xyx
               </a>
             
           </div>
@@ -714,8 +687,8 @@ public byte[] getBytes() {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/11/xyx/" rel="prev" title="xyx">
-                xyx <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/11/hcl/" rel="prev" title="hcl">
+                hcl <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -876,7 +849,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-初赛"><span class="nav-number">1.</span> <span class="nav-text">1 初赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-赛题背景分析及理解"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 赛题背景分析及理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-核心思路"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 核心思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-整体处理流程"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 整体处理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.2.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-消息存储方案"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.2 消息存储方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-消息持久化"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.3 消息持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.2.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-数据压缩方案"><span class="nav-number">1.2.6.</span> <span class="nav-text">1.2.4.数据压缩方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-关键代码"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.关键代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-总结"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-复赛"><span class="nav-number">2.</span> <span class="nav-text">2 复赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-赛题背景分析及理解"><span class="nav-number">2.1.</span> <span class="nav-text">2.1.赛题背景分析及理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-核心思路"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 核心思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-整体处理流程"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 整体处理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-2"><span class="nav-number">2.2.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-3"><span class="nav-number">2.2.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-数据处理"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.2.2 数据处理</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-初赛"><span class="nav-number">1.</span> <span class="nav-text">1 初赛</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-赛题背景分析及理解"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 赛题背景分析及理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-核心思路"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 核心思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-整体处理流程"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.2.1 整体处理流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.2.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-消息存储方案"><span class="nav-number">1.2.3.</span> <span class="nav-text">1.2.2 消息存储方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-消息持久化"><span class="nav-number">1.2.4.</span> <span class="nav-text">1.2.3 消息持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-1"><span class="nav-number">1.2.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-数据压缩方案"><span class="nav-number">1.2.6.</span> <span class="nav-text">1.2.4.数据压缩方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-关键代码"><span class="nav-number">1.3.</span> <span class="nav-text">1.3.关键代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-总结"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 总结</span></a></li></ol></li></ol></div>
             
 
           </div>
